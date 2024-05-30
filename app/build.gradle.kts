@@ -2,7 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
-
+dependencies {
+    implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
+}
 android {
     namespace = "com.example.lojaadminmobile"
     compileSdk = 34
