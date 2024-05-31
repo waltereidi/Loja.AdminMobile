@@ -1,5 +1,6 @@
 package com.example.lojaadminmobile
 
+import android.icu.text.ListFormatter.Width
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,6 +11,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.lojaadminmobile.ui.theme.LojaAdminMobileTheme
 
@@ -20,9 +23,16 @@ class SpashScreen : ComponentActivity() {
         setContent {
             LojaAdminMobileTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting2(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    Text(
+                        text = "sdsdsds!",
+                        modifier =  Modifier.padding(innerPadding),
+                        color = Color.Red,
+
+                    )
+                    Text(
+                        text = "Anssssssssssssssssssssdroids",
+                        modifier = Modifier.padding(innerPadding),
+
                     )
                 }
             }
@@ -38,10 +48,10 @@ fun Greeting2(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
 @Composable
-fun GreetingPreview2() {
-    LojaAdminMobileTheme {
-        Greeting2("Android")
-    }
+fun Greeting3(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Helloss $name!",
+        modifier = modifier,
+    )
 }
