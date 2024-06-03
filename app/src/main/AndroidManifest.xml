@@ -10,31 +10,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LojaAdminMobile"
+        android:theme="@style/AppTheme"
         tools:targetApi="31">
 
         <activity
-            android:name=".SpashScreen"
-            android:exported="true"
-            android:label="@string/title_activity_spash_screen"
-            android:theme="@style/Theme.LojaAdminMobile">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.LojaAdminMobile">
+            android:label="@string/title_activity_spash_screen"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

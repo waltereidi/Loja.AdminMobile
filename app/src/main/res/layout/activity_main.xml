@@ -1,18 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CF4E4E"
     android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/plain_text_input"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filledTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32px"
-        android:layout_marginEnd="32px"
-        android:hint="Type your registered email"
-        android:inputType="text"
-        android:maxLength="90" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Enter something">
 
+        <!--this is the actual edit text which takes the input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="Submit" />
+
+    <!--text view which previews the entered data by user-->
+    <TextView
+        android:id="@+id/text_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:text="You Entered : "
+        android:textSize="18sp" />
 </LinearLayout>
