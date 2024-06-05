@@ -2,13 +2,17 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
+val jetpackVersion = "2.5.1"
+var fragment_version = "1.7.1"
 dependencies {
     implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$jetpackVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$jetpackVersion")
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
 }
 android {
     namespace = "com.example.lojaadminmobile"
     compileSdk = 34
-
     defaultConfig {
         applicationId = "com.example.lojaadminmobile"
         minSdk = 28
@@ -49,6 +53,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 }
 
 dependencies {
