@@ -2,6 +2,9 @@
     <string name="app_name">Loja.AdminMobile</string>
     <string name="title_activity_spash_screen">SpashScreen</string>
     <string name="title_activity_login">LoginActivity</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO:Login Screen-->
+    <string name="MainActivity_submit">Sign in</string>
+    <string name="MainActivity_editEmail">Email</string>
+    <string name="MainActivity_editPassword">Password</string>
+
 </resources>

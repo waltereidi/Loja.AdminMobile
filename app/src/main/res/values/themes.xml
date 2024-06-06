@@ -13,7 +13,7 @@
         <item name="cornerSize">14dp</item>
     </style>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="colorPrimary">@color/material_dynamic_primary10</item>
+        <item name="colorPrimary">@color/blue_A700</item>
         <item name="colorPrimaryDark">@color/cardview_dark_background</item>
         <item name="colorAccent">@color/cardview_dark_background</item>
     </style>

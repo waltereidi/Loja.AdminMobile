@@ -9,52 +9,49 @@
 
 
     <com.google.android.material.textfield.TextInputLayout parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        style="@style/TextField"
         android:id="@+id/emailTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:hint="Enter something"
+        android:hint="@string/MainActivity_editPassword"
         >
 
         <!--this is the actual edit text which takes the input-->
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_text"
+            android:id="@+id/emailEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/TextField"
         android:id="@+id/passwordTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:hint="password"
+        android:hint="@string/MainActivity_editPassword"
         app:passwordToggleEnabled="true"
         >
 
         <!--this is the actual edit text which takes the input-->
         <com.google.android.material.textfield.TextInputEditText
-            style="@style/TextField"
-            android:id="@+id/password_text"
+            android:id="@+id/passwordEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        style="@style/TextField"
         android:id="@+id/submit_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="Submit" />
+        android:onClick="submit"
+        android:text="@string/MainActivity_submit" />
 
 
 </LinearLayout>

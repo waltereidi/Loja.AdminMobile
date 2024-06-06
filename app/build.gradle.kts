@@ -6,9 +6,7 @@ val jetpackVersion = "2.5.1"
 var fragment_version = "1.7.1"
 dependencies {
     implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$jetpackVersion")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$jetpackVersion")
-    implementation("androidx.fragment:fragment-ktx:$fragment_version")
+
 }
 android {
     namespace = "com.example.lojaadminmobile"
@@ -57,7 +55,11 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$jetpackVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$jetpackVersion")
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
