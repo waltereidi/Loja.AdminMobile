@@ -50,7 +50,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:onClick="submit"
+        android:onClick="submitLogin"
         android:text="@string/MainActivity_submit" />
 
 
