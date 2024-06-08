@@ -1,15 +1,6 @@
-package com.example.lojaadminmobile
-import android.os.Bundle
-import android.view.View
-import android.widget.EditText
-import androidx.activity.ComponentActivity
-import di.DependencyInjection
-import dto.LoginRequest
-import interfaces.AuthenticationApi
+package di
+
 import okhttp3.OkHttpClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.security.SecureRandom
@@ -20,44 +11,21 @@ import javax.net.ssl.SSLSocketFactory
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
-
-class MainActivity : ComponentActivity() {
-    private val email: EditText get() = findViewById(R.id.emailEdit)
-    private val password: EditText get() = findViewById(R.id.passwordEdit)
-    private val retrofit = Retrofit
-        .Builder()
-        .baseUrl("https://192.168.0.108:7179")
-        .client(getUnsafeOkHttpClient().build())
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    private val apiService = retrofit.create(AuthenticationApi::class.java)
-    ;
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main);
+class DependencyInjection{
+    private val ApiURL:String = "https://localhost:7179" ;
+    constructor()
+    fun GetRetrofit(): Retrofit
+    {
+        return Retrofit
+            .Builder()
+            .baseUrl(ApiURL)
+            //Creates the certificate for HTTPS API call
+            .client(GetUnsafeOkHttpClient().build())
+            //Converts the body to  JSON
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
-
-    fun submitLogin(view: View) {
-        try{
-            val body = LoginRequest(email.text.toString(), password.text.toString())
-            var call =apiService.submitLogin(body)
-            call?.enqueue(object : Callback<Void> {
-                override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                    TODO("Not yet implemented")
-                }
-
-                override fun onFailure(call: Call<Void>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-
-
-            })
-        }catch (e:Exception)
-        {
-            val ex = e;
-        }
-    }
-    fun getUnsafeOkHttpClient(): OkHttpClient.Builder {
+    private fun GetUnsafeOkHttpClient(): OkHttpClient.Builder {
         try {
             // Create a trust manager that does not validate certificate chains
             val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
@@ -74,8 +42,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
             )
-
-
             // Install the all-trusting trust manager
             val sslContext = SSLContext.getInstance("SSL")
             sslContext.init(null, trustAllCerts, SecureRandom())
@@ -92,8 +58,5 @@ class MainActivity : ComponentActivity() {
             throw RuntimeException(e)
         }
     }
+
 }
-
-
-
-
