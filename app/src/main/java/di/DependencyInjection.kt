@@ -12,7 +12,7 @@ import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
 class DependencyInjection{
-    private val ApiURL:String = "https://localhost:7179" ;
+    private val ApiURL:String = "https://192.168.0.108:7179" ;
     constructor()
     fun GetRetrofit(): Retrofit
     {

@@ -7,8 +7,8 @@ data class LoginRequest(
     @SerializedName("Password") val password:String
 )
 data class LoginResponse(
-    val Token:String,
-    val Email:String,
-    val FirstName:String,
-    val LastName:String,
+    @SerializedName("token") val Token:String,
+    @SerializedName("email") val Email:String,
+    @SerializedName("firstName") val FirstName:String,
+    @SerializedName("lastName") val LastName:String,
 )
