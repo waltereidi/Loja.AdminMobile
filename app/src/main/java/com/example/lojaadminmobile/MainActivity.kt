@@ -24,18 +24,14 @@ class MainActivity : ComponentActivity() {
             val body = LoginRequest(email.text.toString(), password.text.toString())
             var call =apiService.submitLogin(body)
             call?.enqueue(object : Callback<LoginResponse?> {
-                override fun onResponse(
-                    call: Call<LoginResponse?>,
-                    response: Response<LoginResponse?>
-                ) {
+                override fun onResponse(call: Call<LoginResponse?>, response: Response<LoginResponse?>)
+                {
                     TODO("Not yet implemented")
                 }
-
-                override fun onFailure(call: Call<LoginResponse?>, t: Throwable) {
+                override fun onFailure(call: Call<LoginResponse?>, t: Throwable)
+                {
                     TODO("Not yet implemented")
                 }
-
-
             })
         }catch (e:Exception)
         {

@@ -1,6 +1,7 @@
 package di
 
 import okhttp3.OkHttpClient
+import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.security.SecureRandom
@@ -11,11 +12,13 @@ import javax.net.ssl.SSLSocketFactory
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
-class DependencyInjection{
-    private val ApiURL:String = "https://192.168.0.108:7179" ;
-    constructor()
+
+public  class DependencyInjection{
+    private val ApiURL:String = "https://192.168.0.108:7179";
+
     fun GetRetrofit(): Retrofit
     {
+
         return Retrofit
             .Builder()
             .baseUrl(ApiURL)
@@ -24,6 +27,8 @@ class DependencyInjection{
             //Converts the body to  JSON
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
+
     }
     private fun GetUnsafeOkHttpClient(): OkHttpClient.Builder {
         try {
@@ -53,6 +58,13 @@ class DependencyInjection{
             val builder = OkHttpClient.Builder()
             builder.sslSocketFactory(sslSocketFactory, trustAllCerts[0] as X509TrustManager)
             builder.hostnameVerifier { hostname, session -> true }
+            //Create default headers bearer token if exists
+            builder.addInterceptor { chain ->
+                val request: Request =
+                    chain.request().newBuilder().addHeader("Authorization", "Bearer "+DataRepository.login!!.Token ).build()
+                chain.proceed(request)
+            }
+
             return builder
         } catch (e: java.lang.Exception) {
             throw RuntimeException(e)
