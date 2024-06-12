@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "953065559839",
+    "project_id": "lojaadminmobile",
+    "storage_bucket": "lojaadminmobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953065559839:android:718330bfc1ac6c9b3bc22a",
+        "android_client_info": {
+          "package_name": "com.example.lojaadminmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARinS67XyxUIZknOZ-ifXm7c0G1RyczFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
