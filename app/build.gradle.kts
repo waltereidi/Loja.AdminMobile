@@ -55,13 +55,16 @@ android {
     }
 
 }
-
+val lifecycle_version_mvvm = "2.8.2"
 dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$jetpackVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$jetpackVersion")
     implementation("androidx.fragment:fragment-ktx:$fragment_version")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version_mvvm")
+    implementation("androidx.lifecycle:lifecycle-livedata:$lifecycle_version_mvvm")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -81,3 +84,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+
+
+
+// ViewModel

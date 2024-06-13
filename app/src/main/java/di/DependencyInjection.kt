@@ -14,7 +14,7 @@ import javax.net.ssl.X509TrustManager
 
 
 public  class DependencyInjection{
-    private val ApiURL:String = "https://192.168.0.108:7179";
+    private val ApiURL:String = "https://10.0.2.2:7179";
 
     fun GetRetrofit(): Retrofit
     {
@@ -61,7 +61,7 @@ public  class DependencyInjection{
             //Create default headers bearer token if exists
             builder.addInterceptor { chain ->
                 val request: Request =
-                    chain.request().newBuilder().addHeader("Authorization", "Bearer "+DataRepository.login!!.Token ).build()
+                    chain.request().newBuilder().addHeader("Authorization", "Bearer " ).build()
                 chain.proceed(request)
             }
 
