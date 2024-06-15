@@ -1,8 +1,9 @@
-package dto
+package com.example.lojaadminmobile.Main
 
 import com.google.firebase.database.IgnoreExtraProperties
 import com.google.gson.annotations.SerializedName
-public class MainActivityData{
+
+class MainRepository {
     data class LoginRequest(
         @SerializedName("Email") val email:String,
         @SerializedName("Password") val password:String
@@ -18,5 +19,4 @@ public class MainActivityData{
         // Null default values create a no-argument default constructor, which is needed
         // for deserialization from a DataSnapshot.
     }
-
 }
