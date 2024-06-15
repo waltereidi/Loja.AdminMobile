@@ -15,15 +15,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main);
     }
-
     fun submitLogin(view: View) {
-        try{
-
-        }catch (e:Exception)
-        {
-            val ex = e;
-        }
+        viewModel.SubmitLogin(email.text.toString() , password.text.toString())
     }
+
 }
 
 

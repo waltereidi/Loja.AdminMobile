@@ -1,6 +1,7 @@
 package com.example.lojaadminmobile.Main
 
 import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import di.DependencyInjection
 import di.FireBase
@@ -19,16 +20,20 @@ public class MainViewModel(context:Context) : ViewModel()
     fun SubmitLogin(email:String , password:String )
     {
         val body = MainRepository.LoginRequest(email, password)
-        var call =ApiService.submitLogin(body)
-        call?.enqueue(object : Callback<MainRepository.LoginResponse?> {
-            override fun onResponse(call: Call<MainRepository.LoginResponse?>, response: Response<MainRepository.LoginResponse?>)
+        val call = ApiService.submitLogin(body)
+
+        call.enqueue(object : Callback<MainRepository.LoginResponse> {
+            override fun onResponse(call: Call<MainRepository.LoginResponse>, response: Response<MainRepository.LoginResponse>)
             {
-                val res = response.body()
-                val login = MainRepository.LoginDTO( res?.Token, res?.Email, res?.FirstName, res?.LastName )
-                FireBase.InsertAuthenticationFromLogin(login);
+                if(response.isSuccessful()){
+                    FireBase.SetAuthentication( response.body()!!);
+                }else{
+                    Toast.makeText(_context, "Invalid email or password", Toast.LENGTH_SHORT).show()
+                }
             }
             override fun onFailure(call: Call<MainRepository.LoginResponse?>, t: Throwable)
             {
+                Toast.makeText(_context, t.message , Toast.LENGTH_SHORT).show()
             }
         })
     }

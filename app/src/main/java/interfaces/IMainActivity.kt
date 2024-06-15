@@ -1,11 +1,9 @@
 package interfaces
-import dto.MainActivityData.LoginRequest
-import dto.MainActivityData.LoginResponse
+import com.example.lojaadminmobile.Main.MainRepository
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
-
 interface IMainActivity {
     @POST("/api/Admin/Authentication/Login")
-    fun     submitLogin(@Body body: LoginRequest): Call<LoginResponse?>?
+    fun submitLogin(@Body body: MainRepository.LoginRequest): Call<MainRepository.LoginResponse>
 }

@@ -2,6 +2,7 @@ package com.example.lojaadminmobile.Main
 
 import com.google.firebase.database.IgnoreExtraProperties
 import com.google.gson.annotations.SerializedName
+import java.time.Clock
 
 class MainRepository {
     data class LoginRequest(
@@ -13,10 +14,10 @@ class MainRepository {
         @SerializedName("email") val Email:String,
         @SerializedName("firstName") val FirstName:String,
         @SerializedName("lastName") val LastName:String,
+        @SerializedName("created_at") val CreatedAt:Clock,
+        @SerializedName("expires_at") val ExpireAt:Clock
     )
     @IgnoreExtraProperties
-    data class LoginDTO(val token: String? = null, val email: String? = null , val fisrtName:String? , val lastName:String? ) {
-        // Null default values create a no-argument default constructor, which is needed
-        // for deserialization from a DataSnapshot.
+    data class LoginDTO(val token: String, val email: String, val firstName:String , val lastName:String , val createdAt:Clock , val expireAt:Clock) {
     }
 }
