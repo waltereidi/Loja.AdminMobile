@@ -17,16 +17,17 @@ public class MainViewModel(context:Context) : ViewModel()
     private val ApiService =  DependencyInjection().GetRetrofit(null).create(IMainActivity::class.java)
     private val FireBase = FireBase(_context)
 
-    fun SubmitLogin(email:String , password:String )
+    fun SubmitLogin(email:String , password:String ): Boolean
     {
+        var isSuccessfull:Boolean = false
         val body = MainRepository.LoginRequest(email, password)
         val call = ApiService.submitLogin(body)
 
         call.enqueue(object : Callback<MainRepository.LoginResponse> {
-            override fun onResponse(call: Call<MainRepository.LoginResponse>, response: Response<MainRepository.LoginResponse>)
-            {
+            override fun onResponse(call: Call<MainRepository.LoginResponse>, response: Response<MainRepository.LoginResponse>) {
                 if(response.isSuccessful()){
-                    FireBase.SetAuthentication( response.body()!!);
+                    FireBase.SetAuthentication( response.body()!!)
+                    isSuccessfull= true
                 }else{
                     Toast.makeText(_context, "Invalid email or password", Toast.LENGTH_SHORT).show()
                 }
@@ -35,7 +36,9 @@ public class MainViewModel(context:Context) : ViewModel()
             {
                 Toast.makeText(_context, t.message , Toast.LENGTH_SHORT).show()
             }
+
         })
+        return isSuccessfull
     }
 
 }

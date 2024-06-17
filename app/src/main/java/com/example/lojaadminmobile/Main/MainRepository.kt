@@ -1,8 +1,7 @@
 package com.example.lojaadminmobile.Main
 
-import com.google.firebase.database.IgnoreExtraProperties
 import com.google.gson.annotations.SerializedName
-import java.time.Clock
+import java.util.Date
 
 class MainRepository {
     data class LoginRequest(
@@ -14,10 +13,7 @@ class MainRepository {
         @SerializedName("email") val Email:String,
         @SerializedName("firstName") val FirstName:String,
         @SerializedName("lastName") val LastName:String,
-        @SerializedName("created_at") val CreatedAt:Clock,
-        @SerializedName("expires_at") val ExpireAt:Clock
+        @SerializedName("created_at") val CreatedAt:Date,
+        @SerializedName("expires_at") val ExpireAt: Date
     )
-    @IgnoreExtraProperties
-    data class LoginDTO(val token: String, val email: String, val firstName:String , val lastName:String , val createdAt:Clock , val expireAt:Clock) {
-    }
 }

@@ -11,10 +11,12 @@ class FireBase(_context: Context) {
         .child("Authentication")
         .child("auth")
         .setValue(login)
-    fun GetAuthentication() : Task<DataSnapshot> = Db
-        .child("Authentication")
-        .child("auth")
-        .get()
+    fun GetAuthentication() : Task<DataSnapshot> = Db.child("Authentication").child("auth").get()
+
+
+
+
+
 
 
 }

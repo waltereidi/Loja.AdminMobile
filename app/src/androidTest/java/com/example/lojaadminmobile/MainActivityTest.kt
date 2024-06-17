@@ -1,12 +1,10 @@
 package com.example.lojaadminmobile
 
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
-
+import androidx.test.platform.app.InstrumentationRegistry
+import com.example.lojaadminmobile.Main.MainViewModel
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -14,11 +12,13 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class MainActivityTest {
     @Test
-    fun useAppContext() {
-        // Context of the app under test.
+    fun submitLoginTestIsUnsuccesfull() {
+        //Tests execution of the method
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.lojaadminmobile", appContext.packageName)
+        val main:MainViewModel = MainViewModel(appContext)
+        val response = main.SubmitLogin("testCase@email.com" ,"123" )
+        assert(!response)
     }
 }
