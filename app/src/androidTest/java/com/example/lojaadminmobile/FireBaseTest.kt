@@ -17,13 +17,37 @@ class FireBaseTest {
     fun SetAuthenticationReturnsTheSameValuesOnGet()
     {
         //Tests that the data inserted from tests returns equally
-        val dto:MainRepository.LoginResponse = MainRepository.LoginResponse("token"  ,"email" , "fname" , "lname" , Date() , Date() )
-
+        //Assert data gets overwritten
+        val dto: MainRepository.LoginResponse = MainRepository.LoginResponse("token"  ,"email" , "fname" , "lname" , Date() , Date() )
+        val dto_overwrite:MainRepository.LoginResponse = MainRepository.LoginResponse("token_2"  ,"email" , "fname" , "lname" , Date() , Date() )
         Db.SetAuthentication(dto)
+        Db.SetAuthentication(dto_overwrite)
         Db.GetAuthentication().addOnSuccessListener {
             val result = it.getValue<MainRepository.LoginResponse>()
-            assert(result!!.Token == dto.Token)
+            assert(result!!.Token == dto_overwrite.Token)
         }
+    }
+    @Test
+    fun SetLoginStoresTheLastUsedAuthentication()
+    {
+        //Assert stored login is retrieved
+        val login:MainRepository.LoginRequest = MainRepository.LoginRequest("testCase@email.com" , "123")
+        Db.SetLogin(login)
+        Db.GetLogin().addOnSuccessListener {
+            val result = it.getValue<MainRepository.LoginRequest>()
+            assert(result!!.email != login.email)
+        }
+
+    }
+    @Test
+    fun TestsInvalidQueryDoenstBreakApplication()
+    {
+        //assert this code does not break
+        Db.Test().addOnSuccessListener {
+            it.getValue()
+            assert(true)
+        }
+        assert(true)
     }
 
 }

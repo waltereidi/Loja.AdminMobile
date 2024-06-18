@@ -1,9 +1,11 @@
 package com.example.lojaadminmobile.Main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.activity.ComponentActivity
+import com.example.lojaadminmobile.Home.HomeActivity
 import com.example.lojaadminmobile.R
 
 class MainActivity : ComponentActivity() {
@@ -14,9 +16,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main);
+        if(viewModel.VerifyStoredLogin())
+            Intent(this , HomeActivity::class.java )
     }
     fun submitLogin(view: View) {
-        viewModel.SubmitLogin(email.text.toString() , password.text.toString())
+        val loginAttempt = viewModel.SubmitLogin(email.text.toString() , password.text.toString())
     }
 
 }
