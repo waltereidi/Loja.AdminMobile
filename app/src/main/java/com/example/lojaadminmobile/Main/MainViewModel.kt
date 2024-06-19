@@ -18,9 +18,8 @@ public class MainViewModel(context:Context) : ViewModel()
     private val ApiService =  DependencyInjection().GetRetrofit(null).create(IMainActivity::class.java)
     private val Db = FireBase(_context)
 //this method should store the token and used login for future use
-    fun SubmitLogin(email:String , password:String ): Boolean
+    fun SubmitLogin(email:String , password:String ,callBack: (Boolean) -> Unit)
     {
-        var isSuccessfull:Boolean = false
         val body = MainRepository.LoginRequest(email, password)
         val call = ApiService.submitLogin(body)
 
@@ -29,27 +28,28 @@ public class MainViewModel(context:Context) : ViewModel()
                 if( response.isSuccessful()){
                     Db.SetAuthentication( response.body()!!)
                     Db.SetLogin(body)
-                    isSuccessfull= true
+                    callBack(true)
                 }else{
                     Toast.makeText(_context, "Invalid email or password", Toast.LENGTH_SHORT).show()
+                    callBack(false)
                 }
             }
             override fun onFailure(call: Call<MainRepository.LoginResponse?>, t: Throwable)
             {
                 Toast.makeText(_context, t.message , Toast.LENGTH_SHORT).show()
+                callBack(false)
             }
 
         })
-        return isSuccessfull
     }
-    fun VerifyStoredLogin() : Boolean
+    fun VerifyStoredLogin(callBack:(Boolean)->Unit)
     {
-        var isSuccessfull:Boolean = false
         Db.GetLogin().addOnSuccessListener {
             val storedLogin = it.getValue<MainRepository.LoginRequest>()
-            isSuccessfull = this.SubmitLogin(storedLogin!!.email , storedLogin!!.password)
+            this.SubmitLogin(storedLogin!!.email , storedLogin!!.password){
+                callBack(it)
+            }
         }
-        return isSuccessfull
     }
 
 }

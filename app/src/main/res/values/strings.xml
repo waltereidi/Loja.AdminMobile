@@ -7,8 +7,8 @@
     <string name="MainActivity_editEmail">Email</string>
     <string name="MainActivity_editPassword">Password</string>
     <string name="title_activity_home">HomeActivity</string>
-    <string name="title_home">Home</string>
+    <string name="title_requests">Requests</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_products">Products</string>
 
 </resources>
