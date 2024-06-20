@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.lojaadminmobile.Products.ui.products.ProductsViewModel
 import com.example.lojaadminmobile.databinding.FragmentProductsBinding
 
 class ProductsFragment : Fragment() {
@@ -18,19 +17,16 @@ class ProductsFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val productsViewModel =
-            ViewModelProvider(this).get(ProductsViewModel::class.java)
+    override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View
+    {
+        val productsViewModel = ViewModelProvider(this).get(ProductsViewModel::class.java)
 
         _binding = FragmentProductsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textProducts
-        productsViewModel.text.observe(viewLifecycleOwner) {
+        productsViewModel.text.observe(viewLifecycleOwner)
+        {
             textView.text = it
         }
         return root

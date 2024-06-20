@@ -15,18 +15,23 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main)
         viewModel.VerifyStoredLogin(){
-            if(it)
-                Intent(this , HomeActivity::class.java )
+            if(it){
+                val intent = Intent(this , HomeActivity::class.java )
+                startActivity(intent)
+            }
+
         }
 
     }
     fun submitLogin(view: View) {
-        viewModel.SubmitLogin(email.text.toString() , password.text.toString()){
-            if(it)
-                Intent(this , HomeActivity::class.java )
-        }
+        val intent = Intent(this , HomeActivity::class.java )
+        startActivity(intent)
+//        viewModel.SubmitLogin(email.text.toString() , password.text.toString()){
+//            if(it)
+//                Intent(this , HomeActivity::class.java )
+//        }
     }
 
 }

@@ -56,6 +56,7 @@ android {
     }
 
 }
+
 val lifecycle_version_mvvm = "2.8.2"
 dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$jetpackVersion")
@@ -82,6 +83,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.databinding.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

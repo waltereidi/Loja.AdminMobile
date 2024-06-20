@@ -17,6 +17,7 @@ lifecycleViewmodelKtx = "2.8.1"
 navigationFragmentKtx = "2.6.0"
 navigationUiKtx = "2.6.0"
 navigationFragment = "2.7.7"
+databindingRuntime = "8.5.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,6 +43,7 @@ androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifec
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
+androidx-databinding-runtime = { group = "androidx.databinding", name = "databinding-runtime", version.ref = "databindingRuntime" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

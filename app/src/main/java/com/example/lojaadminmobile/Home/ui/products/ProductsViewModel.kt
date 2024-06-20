@@ -1,4 +1,4 @@
-package com.example.lojaadminmobile.Products.ui.products
+package com.example.lojaadminmobile.Home.ui.products
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
