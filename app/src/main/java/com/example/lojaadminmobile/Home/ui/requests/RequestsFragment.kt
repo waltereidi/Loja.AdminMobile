@@ -12,24 +12,22 @@ import com.example.lojaadminmobile.databinding.FragmentRequestsBinding
 class RequestsFragment : Fragment() {
 
     private var _binding: FragmentRequestsBinding? = null
-
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
+        val requestsViewModel =
             ViewModelProvider(this).get(RequestsViewModel::class.java)
 
         _binding = FragmentRequestsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textRequests
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        requestsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
