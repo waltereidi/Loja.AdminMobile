@@ -1,10 +1,13 @@
 package di
 
 import android.content.Context
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import interfaces.IDependencyInjection
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,14 +19,20 @@ import javax.net.ssl.SSLSocketFactory
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
-
-public  class DependencyInjection{
+public  class DependencyInjection :IDependencyInjection
+{
     private val ApiURL:String = "https://10.0.2.2:7179";
     private lateinit var database: DatabaseReference
     fun GetFireBaseInstance(_context: Context) :DatabaseReference
     {
         FirebaseApp.initializeApp(_context)
         return Firebase.database.reference
+    }
+    override fun loadImage(context:Context ,imageUrl: String, imageView: ImageView) {
+        Glide.with(context)
+            .load(imageUrl)
+            .centerCrop()
+            .into(imageView)
     }
     fun GetRetrofit(token:String?): Retrofit
     {
@@ -75,4 +84,6 @@ public  class DependencyInjection{
             throw RuntimeException(e)
         }
     }
+
+
 }

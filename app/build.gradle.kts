@@ -4,12 +4,7 @@ plugins {
     id("com.google.gms.google-services")
 
 }
-val jetpackVersion = "2.5.1"
-var fragment_version = "1.7.1"
-dependencies {
-    implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
 
-}
 android {
     namespace = "com.example.lojaadminmobile"
     compileSdk = 34
@@ -60,7 +55,10 @@ android {
 dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-
+    implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
+    implementation("com.github.bumptech.glide:glide:4.14.2")
+    // Skip this if you don't want to use integration libraries or configure Glide.
+    annotationProcessor("com.github.bumptech.glide:compiler:4.14.2")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -74,7 +72,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -84,7 +81,6 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.material)
     implementation(libs.firebase.database.ktx)
-    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     implementation(libs.androidx.databinding.runtime)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
