@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_products"
-        android:name="com.example.lojaadminmobile.Home.ui.products.HomeFragment"
+        android:name="com.example.lojaadminmobile.Home.ui.products.ProductsFragment"
         android:label="@string/title_products"
         tools:layout="@layout/fragment_products" />
 

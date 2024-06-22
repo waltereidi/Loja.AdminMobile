@@ -57,15 +57,9 @@ android {
 
 }
 
-val lifecycle_version_mvvm = "2.8.2"
 dependencies {
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$jetpackVersion")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$jetpackVersion")
-    implementation("androidx.fragment:fragment-ktx:$fragment_version")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version_mvvm")
-    implementation("androidx.lifecycle:lifecycle-livedata:$lifecycle_version_mvvm")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -75,6 +69,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
