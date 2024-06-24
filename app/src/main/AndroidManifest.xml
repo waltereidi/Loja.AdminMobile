@@ -15,6 +15,9 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Home.ui.products.viewHolder.ProductViewHolder"
+            android:exported="false" />
+        <activity
             android:name=".Home.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home" />

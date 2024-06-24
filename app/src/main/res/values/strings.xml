@@ -2,7 +2,7 @@
     <string name="app_name">Loja.AdminMobile</string>
     <string name="title_activity_spash_screen">SpashScreen</string>
     <string name="title_activity_login">LoginActivity</string>
-    <!-- TODO:Login Screen-->
+    <!-- Login Screen-->
     <string name="MainActivity_submit">Sign in</string>
     <string name="MainActivity_editEmail">Email</string>
     <string name="MainActivity_editPassword">Password</string>
@@ -10,5 +10,9 @@
     <string name="title_requests">Requests</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_products">Products</string>
-
+    <!-- Products ViewHolder    -->
+    <string name="product_image">Image of product</string>
+    <string name="product_name">Name of the product</string>
+    <string name="product_category">Product Category</string>
+    <string name="product_description">Product description</string>
 </resources>

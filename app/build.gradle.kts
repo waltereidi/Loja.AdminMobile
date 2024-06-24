@@ -57,6 +57,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
     implementation("com.github.bumptech.glide:glide:4.14.2")
+    implementation(libs.androidx.activity)
     // Skip this if you don't want to use integration libraries or configure Glide.
     annotationProcessor("com.github.bumptech.glide:compiler:4.14.2")
     implementation(libs.androidx.core.ktx)
