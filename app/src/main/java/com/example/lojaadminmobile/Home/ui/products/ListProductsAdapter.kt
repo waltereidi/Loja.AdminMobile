@@ -42,11 +42,9 @@ class ListProductsAdapter(
         }
     else -> throw IllegalArgumentException("Wrong view type :$viewType")
     }
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = listData.size
     override fun onBindViewHolder(holder: ListProductsViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bindData(listData[position])
     }
     inner class SwipeToDeleteCallBack:ItemTouchHelper.SimpleCallback( 0 , ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT )
     {

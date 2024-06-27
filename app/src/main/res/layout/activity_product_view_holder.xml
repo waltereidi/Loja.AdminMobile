@@ -26,7 +26,7 @@
         android:layout_marginStart="16dp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/product_image"
-        app:layout_constraintTop_toTopOf="product_category"
+        app:layout_constraintTop_toTopOf="@+id/product_category"
         tools:text="Must Read Book" />
 
     <TextView
@@ -51,8 +51,8 @@
         android:id="@+id/product_sku"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="sdsd" />
 </androidx.constraintlayout.widget.ConstraintLayout>
