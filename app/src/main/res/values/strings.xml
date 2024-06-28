@@ -15,4 +15,5 @@
     <string name="product_name">Name of the product</string>
     <string name="product_category">Product Category</string>
     <string name="product_description">Product description</string>
+    <string name="title_activity_product_detail">ProductDetailActivity</string>
 </resources>
