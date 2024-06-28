@@ -60,7 +60,37 @@ class HomeActivity : AppCompatActivity() {
                         "",
                         "",
                         ""
-                    )
+                    ),
+                ),
+                ListProductRepository.Product(
+                    ProductsRepository(
+                        "Title",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ),
+                ),
+                ListProductRepository.Product(
+                    ProductsRepository(
+                        "Title",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ),
+                ),
+                ListProductRepository.Product(
+                    ProductsRepository(
+                        "Title",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ),
                 )
             )
         )
