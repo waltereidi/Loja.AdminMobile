@@ -1,7 +1,7 @@
 package com.example.lojaadminmobile.Home
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lojaadminmobile.Home.ui.products.ListProductRepository
 import com.example.lojaadminmobile.Home.ui.products.ListProductsAdapter
+import com.example.lojaadminmobile.Home.ui.products.ProductDetails.ui.theme.ProductDetailActivity
 import com.example.lojaadminmobile.Home.ui.products.ProductsRepository
 import com.example.lojaadminmobile.R
 import com.example.lojaadminmobile.databinding.ActivityHomeBinding
@@ -97,10 +98,10 @@ class HomeActivity : AppCompatActivity() {
 
     }
     private fun showSelectionDialog(product: ProductsRepository) {
-        AlertDialog.Builder(this)
-            .setTitle("Agent Selected")
-            .setMessage("You have selected agent ${product.name}")
-            .setPositiveButton("OK") { _, _ -> }
-            .show()
+
+        val intent = Intent(this , ProductDetailActivity::class.java )
+        intent.putExtra("ean" ,product.ean )
+        intent.putExtra("sku" ,product.sku )
+        startActivity(intent)
     }
 }

@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".Home.ui.products.ProductDetails.ui.theme.ProductDetail">
+    android:layout_margin="32dp"
+    tools:context=".Home.ui.products.ProductDetails.ui.theme.ProductDetailActivity">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/productDetail_imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_nameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         tools:text="Must Read Book"
         tools:ignore="MissingConstraints" />
 <!-- SKU -->
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_skuTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,8 +41,9 @@
         android:textSize="16sp"
         android:textStyle="bold"
         tools:text="SKU"
+        android:text="@string/ProductDetail_skuText"
         tools:ignore="MissingConstraints,RtlSymmetry" />
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_skuValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,12 +51,11 @@
         app:layout_constraintLeft_toRightOf="@+id/productDetail_skuTextView"
         app:layout_constraintTop_toBottomOf="@+id/productDetail_nameTextView"
         android:textSize="16sp"
-        android:layout_marginStart="20dp"
         android:textStyle="bold"
         tools:text="000000000001"
         tools:ignore="MissingConstraints" />
     <!-- Ean -->
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_eanTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,8 +65,9 @@
         android:textSize="16sp"
         android:textStyle="bold"
         tools:text="Ean"
+        android:text="@string/ProductDetail_ean"
         tools:ignore="MissingConstraints,RtlSymmetry" />
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_eanValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,12 +75,11 @@
         app:layout_constraintLeft_toRightOf="@+id/productDetail_eanTextView"
         app:layout_constraintTop_toBottomOf="@+id/productDetail_skuTextView"
         android:textSize="16sp"
-        android:layout_marginStart="20dp"
         android:textStyle="bold"
         tools:text="0000000001"
         tools:ignore="MissingConstraints" />
     <!-- CreatedAt -->
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_createdAtTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,9 +88,10 @@
         app:layout_constraintTop_toBottomOf="@+id/productDetail_eanTextView"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:text="@string/ProductDetail_createdAt"
         tools:text="CreatedAt"
         tools:ignore="MissingConstraints,RtlSymmetry" />
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_createdAtValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,12 +99,11 @@
         app:layout_constraintLeft_toRightOf="@+id/productDetail_createdAtTextView"
         app:layout_constraintTop_toBottomOf="@+id/productDetail_eanTextView"
         android:textSize="16sp"
-        android:layout_marginStart="20dp"
         android:textStyle="bold"
         tools:text="2020-12-12"
         tools:ignore="MissingConstraints" />
 <!--    UpdatedAt-->
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_updatedAtTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -112,9 +112,10 @@
         app:layout_constraintTop_toBottomOf="@+id/productDetail_createdAtTextView"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:text="@string/ProductDetail_updatedAt"
         tools:text="UpdatedAt"
         tools:ignore="MissingConstraints,RtlSymmetry" />
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_updatedAtValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -122,12 +123,11 @@
         app:layout_constraintLeft_toRightOf="@+id/productDetail_updatedAtTextView"
         app:layout_constraintTop_toBottomOf="@+id/productDetail_createdAtTextView"
         android:textSize="16sp"
-        android:layout_marginStart="20dp"
         android:textStyle="bold"
         tools:text="2020-12-21"
         tools:ignore="MissingConstraints" />
     <!--    Price-->
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_priceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -136,6 +136,7 @@
         app:layout_constraintTop_toBottomOf="@+id/productDetail_updatedAtTextView"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:text="@string/ProductDetail_price"
         tools:text="Price"
         tools:ignore="MissingConstraints,RtlSymmetry" />
     <TextView
@@ -145,13 +146,13 @@
         android:layout_marginTop="16dp"
         app:layout_constraintLeft_toRightOf="@+id/productDetail_priceTextView"
         app:layout_constraintTop_toBottomOf="@+id/productDetail_updatedAtTextView"
+
         android:textSize="16sp"
-        android:layout_marginStart="20dp"
         android:textStyle="bold"
         tools:text="10.00"
         tools:ignore="MissingConstraints" />
-    <!--    Price-->
-    <TextView
+    <!--    category-->
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_categoryTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -160,9 +161,10 @@
         app:layout_constraintTop_toBottomOf="@+id/productDetail_priceTextView"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:text="@string/ProductDetail_category"
         tools:text="Category"
         tools:ignore="MissingConstraints,RtlSymmetry" />
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_categoryValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -170,13 +172,12 @@
         app:layout_constraintLeft_toRightOf="@+id/productDetail_categoryTextView"
         app:layout_constraintTop_toBottomOf="@+id/productDetail_priceTextView"
         android:textSize="16sp"
-        android:layout_marginStart="20dp"
         android:textStyle="bold"
         tools:text="10.00"
         tools:ignore="MissingConstraints" />
 
     <!--    Description-->
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_DescriptionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -186,15 +187,15 @@
         android:textSize="16sp"
         android:textStyle="bold"
         tools:text="Description"
+        android:text="@string/ProductDetail_description"
         tools:ignore="MissingConstraints,RtlSymmetry" />
 
-    <EditText
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/productDetail_DescriptionValueTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
         app:layout_constraintTop_toBottomOf="@+id/productDetail_DescriptionTextView"
    />
 

@@ -16,4 +16,14 @@
     <string name="product_category">Product Category</string>
     <string name="product_description">Product description</string>
     <string name="title_activity_product_detail">ProductDetailActivity</string>
+
+    <!--    Products Detail Sku -->
+    <string name="ProductDetail_skuText">Sku :</string>
+    <string name="ProductDetail_ean">Ean :</string>
+    <string name="ProductDetail_createdAt">Created At:</string>
+    <string name="ProductDetail_updatedAt">Updated At:</string>
+    <string name="ProductDetail_price">Price :</string>
+    <string name="ProductDetail_category">Category :</string>
+    <string name="ProductDetail_description">Description :</string>
+
 </resources>

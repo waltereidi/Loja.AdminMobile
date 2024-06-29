@@ -14,8 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:hint="@string/MainActivity_editPassword"
-        >
+        android:hint="@string/MainActivity_editPassword">
 
         <!--this is the actual edit text which takes the input-->
         <com.google.android.material.textfield.TextInputEditText
@@ -32,8 +31,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/MainActivity_editPassword"
-        app:passwordToggleEnabled="true"
-        >
+        app:passwordToggleEnabled="true">
 
         <!--this is the actual edit text which takes the input-->
         <com.google.android.material.textfield.TextInputEditText
@@ -52,6 +50,5 @@
         android:layout_marginEnd="32dp"
         android:onClick="submitLogin"
         android:text="@string/MainActivity_submit" />
-
 
 </LinearLayout>
