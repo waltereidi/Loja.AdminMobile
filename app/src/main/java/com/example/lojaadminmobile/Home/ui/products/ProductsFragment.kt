@@ -13,7 +13,6 @@ class ProductsFragment : Fragment() {
     private var _binding: FragmentProductsBinding? = null
     private val binding get() = _binding!!
 
-
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View
     {
         val productsViewModel = ViewModelProvider(this).get(ProductsViewModel::class.java)
@@ -22,7 +21,7 @@ class ProductsFragment : Fragment() {
 
         val root: View = binding.root
 
-        val recyclerView = binding.recyclerView
+        val recyclerView = binding.productsRecyclerView
 
         return root
     }
