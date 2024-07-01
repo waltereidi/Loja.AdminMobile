@@ -21,7 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private val recyclerView:RecyclerView by lazy { findViewById(R.id.recycler_view)}
+    private val recyclerView:RecyclerView by lazy { findViewById(R.id.products_recycler_view)}
     private val listProductAdaper by lazy {
         ListProductsAdapter(
             layoutInflater,
