@@ -9,48 +9,60 @@
     android:padding="8dp"
     tools:context=".Home.ui.requests.viewHolder.RequestViewHolder">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/request_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp">
 
-    <ImageView
-        android:id="@+id/request_image"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/blue_500" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/request_clientName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/request_image"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Alexa Fibbles" />
+            <ImageView
+                android:id="@+id/request_image"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                tools:background="@color/blue_500" />
 
-    <TextView
-        android:id="@+id/request_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/blue_500"
-        app:layout_constraintStart_toStartOf="@+id/request_clientName"
-        app:layout_constraintTop_toBottomOf="@+id/request_description"
-        tools:text="1" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/request_clientName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    tools:text="Alexa Fibbles" />
 
-    <TextView
-        android:id="@+id/request_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/request_id"
-        app:layout_constraintTop_toBottomOf="@+id/request_date"
-        tools:text="Brought a book from store" />
+                <TextView
+                    android:id="@+id/request_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue_500"
+                    tools:text="1" />
 
-    <TextView
-        android:id="@+id/request_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="06/30/2024" />
+                <TextView
+                    android:id="@+id/request_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Brought a book from store" />
+
+                <TextView
+                    android:id="@+id/request_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    tools:text="06/30/2024" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

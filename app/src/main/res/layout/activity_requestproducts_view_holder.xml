@@ -10,58 +10,73 @@
     tools:context=".Home.ui.requests.viewHolder.RequestProductsViewHolder">
 
 
-    <ImageView
-        android:id="@+id/requestproduct_image"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/blue_500" />
-
-    <TextView
-        android:id="@+id/requestproduct_name"
-        android:layout_width="wrap_content"
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/requestproduct_card"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/requestproduct_image"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Alexa Fibbles" />
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/requestproduct_image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/blue_500" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+            <TextView
+                android:id="@+id/requestproduct_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                tools:text="Alexa Fibbles" />
 
-    <TextView
-        android:id="@+id/requestproduct_productcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/blue_500"
-        app:layout_constraintStart_toStartOf="@+id/requestproduct_name"
-        app:layout_constraintTop_toBottomOf="@+id/requestproduct_priceCurrency"
-        tools:text="1" />
+            <TextView
+                android:id="@+id/requestproduct_productcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="0101010101" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/requestproduct_priceCurrency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/requestproduct_priceCurrency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/requestproduct_productcode"
-        app:layout_constraintTop_toBottomOf="@+id/requestproduct_quantity"
+                    tools:text="$" />
+                <TextView
+                    android:id="@+id/requestproduct_priceValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    tools:text="10.00" />
+            </LinearLayout>
 
-        tools:text="$" />
-    <TextView
-        android:id="@+id/requestproduct_priceValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/requestproduct_productcode"
-        app:layout_constraintLeft_toRightOf="@+id/requestproduct_productcode"
-        tools:text="10.00" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/requestproduct_quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="gravity"
+        android:gravity="center|end"
+        android:layout_marginEnd="16dp"
         android:textSize="20sp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:text="01" />
 
+
+
+    </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
