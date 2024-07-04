@@ -25,5 +25,8 @@
     <string name="ProductDetail_price">Price :</string>
     <string name="ProductDetail_category">Category :</string>
     <string name="ProductDetail_description">Description :</string>
+    <string name="ProductDetail_uploadImageButton">Upload</string>
+    <string name="ProductDetail_saveButton">Save</string>
+
 
 </resources>
