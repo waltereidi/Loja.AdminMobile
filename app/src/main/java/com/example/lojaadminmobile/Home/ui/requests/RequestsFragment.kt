@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.lojaadminmobile.databinding.FragmentRequestsBinding
 
 class RequestsFragment : Fragment() {
@@ -19,14 +18,9 @@ class RequestsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val requestsViewModel = ViewModelProvider(this).get(RequestsViewModel::class.java)
-
         _binding = FragmentRequestsBinding.inflate(inflater, container, false)
-
         val root: View = binding.root
-
         val recyclerView = binding.requestsRecyclerView
-
         return root
     }
 
