@@ -17,6 +17,7 @@ class ProductViewHolder(private val containerView: View,private val onClickListe
     private val productDescription:TextView by lazy { containerView.findViewById(R.id.product_description)}
     private val productSku:TextView by lazy { containerView.findViewById(R.id.product_sku)}
     private val di:DependencyInjection = DependencyInjection()
+
     override fun bindData(listItem:ListProductRepository )
     {
         require(listItem is ListProductRepository.Product)

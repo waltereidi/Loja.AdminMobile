@@ -261,7 +261,7 @@
                     android:text="@string/ProductDetail_uploadImageButton"
                     android:textSize="16sp"
                     app:icon="@drawable/icons8_camera_96___"
-                    style="@style/Widget.Material3.Button.IconButton.Filled"
+                    style="@style/Widget.Material3.Button.IconButton.Outlined"
                     />
                 <com.google.android.material.button.MaterialButton
                     android:layout_weight="0.5"

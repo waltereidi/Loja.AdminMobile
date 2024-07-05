@@ -1,19 +1,20 @@
 package com.example.lojaadminmobile.Home
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lojaadminmobile.Home.ui.products.ListProductRepository
 import com.example.lojaadminmobile.Home.ui.products.ListProductsAdapter
 import com.example.lojaadminmobile.Home.ui.products.ProductDetails.ui.theme.ProductDetailActivity
 import com.example.lojaadminmobile.Home.ui.products.ProductsRepository
+import com.example.lojaadminmobile.Home.ui.products.ProductsViewModel
+import com.example.lojaadminmobile.Home.ui.requests.RequestsViewModel
 import com.example.lojaadminmobile.R
 import com.example.lojaadminmobile.databinding.ActivityHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -30,8 +31,10 @@ class HomeActivity : AppCompatActivity() {
             },
             this
         )
-
     }
+    private val productsViewModel:ProductsViewModel = ProductsViewModel(recyclerView ,listProductAdaper ,this )
+    private val requestViewModel:RequestsViewModel = RequestsViewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -47,55 +50,41 @@ class HomeActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        recyclerView.adapter = listProductAdaper
-        recyclerView.layoutManager =LinearLayoutManager(this , LinearLayoutManager.VERTICAL ,false )
-        val itemTouchHelper = ItemTouchHelper(listProductAdaper.swipeToDeleteCallback)
-        itemTouchHelper.attachToRecyclerView(recyclerView)
-        listProductAdaper.setData(
-            listOf(
-                ListProductRepository.Product(
-                    ProductsRepository(
-                        "Title",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ),
-                ),
-                ListProductRepository.Product(
-                    ProductsRepository(
-                        "Title",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ),
-                ),
-                ListProductRepository.Product(
-                    ProductsRepository(
-                        "Title",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ),
-                ),
-                ListProductRepository.Product(
-                    ProductsRepository(
-                        "Title",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ),
-                )
-            )
-        )
 
+
+    }
+    override  fun onResume(){
+        super.onResume()
+        Log.d(TAG ,"resumed" )
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG ,"stop" )
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG ,"start" )
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG ,"pause" )
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG ,"destroy" )
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG ,"restart" )
+    }
+
+    override fun onResumeFragments() {
+        super.onResumeFragments()
+        Log.d(TAG ,"resumeFragment" )
     }
     private fun showSelectionDialog(product: ProductsRepository) {
 
