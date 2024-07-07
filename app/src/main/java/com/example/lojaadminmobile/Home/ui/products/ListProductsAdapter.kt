@@ -13,7 +13,7 @@ private const val VIEW_TYPE_PRODUCT = 0
 class ListProductsAdapter(
     private val layoutInflater: LayoutInflater,
     private val onClickListener:OnClickListener,
-    private val context: Context
+    private val context: Context?
 ) : RecyclerView.Adapter<ListProductsViewHolder>(){
     private val listData = mutableListOf<ListProductRepository>()
     val swipeToDeleteCallback = SwipeToDeleteCallBack()
@@ -36,7 +36,7 @@ class ListProductsAdapter(
                         onClickListener.onItemClick(product)
                     }
                 },
-                context
+                context!!
 
             )
         }

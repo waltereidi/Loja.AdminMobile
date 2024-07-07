@@ -27,8 +27,6 @@ open class HomeActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration( setOf( com.example.lojaadminmobile.R.id.navigation_products, com.example.lojaadminmobile.R.id.navigation_dashboard, com.example.lojaadminmobile.R.id.navigation_requests ) )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-
     }
     override  fun onResume(){
         super.onResume()
