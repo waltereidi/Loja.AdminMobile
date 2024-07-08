@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lojaadminmobile.Home.ui.products.ProductDetails.ui.theme.ProductDetailActivity
@@ -36,9 +35,9 @@ class ProductsFragment() : Fragment() {
         val recyclerView:RecyclerView = binding.productsRecyclerView
         recyclerView.adapter = listProductAdaper
         recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL ,false )
-        val itemTouchHelper = ItemTouchHelper(listProductAdaper.swipeToDeleteCallback)
-        productsViewModel.getListData(listProductAdaper)
-
+        //val itemTouchHelper = ItemTouchHelper( listProductAdaper.swipeToDeleteCallback )
+        //itemTouchHelper.attachToRecyclerView(recyclerView)
+        productsViewModel.getListData( listProductAdaper )
 
         return root
     }
@@ -53,4 +52,5 @@ class ProductsFragment() : Fragment() {
         intent.putExtra("sku" ,product.sku )
         startActivity(intent)
     }
+
 }

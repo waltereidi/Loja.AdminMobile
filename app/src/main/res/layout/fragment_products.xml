@@ -5,13 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home.ui.products.ProductsFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/products_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,11 +3,13 @@ package com.example.lojaadminmobile.Home
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.lojaadminmobile.R
 import com.example.lojaadminmobile.databinding.ActivityHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -61,5 +63,9 @@ open class HomeActivity : AppCompatActivity() {
         super.onResumeFragments()
         Log.d(TAG ,"resumeFragment" )
     }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.bottom_nav_menu, menu)
 
+        return true
+    }
 }

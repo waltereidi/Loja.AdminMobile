@@ -27,6 +27,8 @@
     <string name="ProductDetail_description">Description :</string>
     <string name="ProductDetail_uploadImageButton">Upload</string>
     <string name="ProductDetail_saveButton">Save</string>
+    <string name="title_productDetail">Product Detail</string>
+    <string name="home_search_title">search</string>
 
 
 </resources>

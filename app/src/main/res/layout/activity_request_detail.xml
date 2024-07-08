@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="32dp"
-    tools:context=".Home.ui.requests.RequestDetails.ui.theme.RequestDetailActivity">
+    tools:context="com.example.lojaadminmobile.Home.ui.requests.RequestDetails.RequestDetailActivity">
 
 
 

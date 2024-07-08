@@ -12,7 +12,7 @@ private const val VIEW_TYPE_PRODUCT = 0
 class ListRequestsAdapter(
     private val layoutInflater: LayoutInflater,
     private val onClickListener:OnClickListener,
-    private val context: Context
+    private val context: Context?
 ) : RecyclerView.Adapter<ListRequestsViewHolder>(){
     private val listData = mutableListOf<ListRequestRepository>()
     fun setData(newListData: List<ListRequestRepository>) {
@@ -34,7 +34,7 @@ class ListRequestsAdapter(
                         onClickListener.onItemClick(request)
                     }
                 },
-                context
+                context!!
 
             )
         }

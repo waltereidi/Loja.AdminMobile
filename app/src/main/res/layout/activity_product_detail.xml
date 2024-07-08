@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="32dp"
+    android:title="@string/title_productDetail"
     tools:context=".Home.ui.products.ProductDetails.ui.theme.ProductDetailActivity">
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
