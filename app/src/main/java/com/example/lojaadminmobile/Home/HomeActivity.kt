@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 open class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+
     ///DashBoard
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +26,8 @@ open class HomeActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
 
-        val navController = findNavController(com.example.lojaadminmobile.R.id.nav_host_fragment_activity_home)
-        val appBarConfiguration = AppBarConfiguration( setOf( com.example.lojaadminmobile.R.id.navigation_products, com.example.lojaadminmobile.R.id.navigation_dashboard, com.example.lojaadminmobile.R.id.navigation_requests ) )
+        val navController = findNavController(R.id.nav_host_fragment_activity_home)
+        val appBarConfiguration = AppBarConfiguration( setOf( R.id.navigation_products,R.id.navigation_dashboard, R.id.navigation_requests ) )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -65,6 +66,7 @@ open class HomeActivity : AppCompatActivity() {
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.top_nav_menu, menu)
+
         return true
     }
 }

@@ -8,7 +8,7 @@ import com.example.lojaadminmobile.Home.ui.requests.viewHolder.ListRequestsViewH
 import com.example.lojaadminmobile.Home.ui.requests.viewHolder.RequestViewHolder
 import com.example.lojaadminmobile.R
 
-private const val VIEW_TYPE_PRODUCT = 0
+private const val VIEW_TYPE_REQUEST = 0
 class ListRequestsAdapter(
     private val layoutInflater: LayoutInflater,
     private val onClickListener:OnClickListener,
@@ -25,8 +25,8 @@ class ListRequestsAdapter(
         notifyItemRemoved(position)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = when (viewType) {
-        VIEW_TYPE_PRODUCT ->{
-            val view= layoutInflater.inflate(R.layout.activity_product_view_holder , parent , false)
+        VIEW_TYPE_REQUEST ->{
+            val view= layoutInflater.inflate(R.layout.activity_request_view_holder , parent , false)
             RequestViewHolder(
                 view ,
                 object: RequestViewHolder.OnClickListener{
@@ -46,6 +46,6 @@ class ListRequestsAdapter(
     }
 
     interface OnClickListener {
-        fun onItemClick( product: RequestsRepository)
+        fun onItemClick( request: RequestsRepository)
     }
 }

@@ -10,12 +10,12 @@ class ProductsViewModel() : ViewModel()
             listOf(
                 ListProductRepository.Product(
                     ProductsRepository(
-                        "Title",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
+                        "Kitties",
+                        "CatProduct",
+                        "999898",
+                        "0009990",
+                        "https://www.vetstreet.com/wp-content/uploads/2022/09/shutterstock_772334182.jpg",
+                        "Cuties"
                     ),
                 )
             )

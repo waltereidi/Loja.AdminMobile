@@ -18,7 +18,9 @@
         <item name="colorAccent">@color/cardview_dark_background</item>
         <item name="colorOutline">@color/blue_800</item>
     </style>
-
+    <style name="MySearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:background">@android:color/white</item>
+    </style>
     <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">4dp</item>

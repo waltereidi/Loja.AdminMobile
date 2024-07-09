@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".Home.ui.requests.RequestDetails.ui.theme.RequestDetailActivity">
+    tools:context="com.example.lojaadminmobile.Home.ui.requests.RequestDetailActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/requestproduct_card"

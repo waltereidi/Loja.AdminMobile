@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lojaadminmobile.Home.ui.products.ProductDetails.ui.theme.ProductDetailActivity
+import com.example.lojaadminmobile.Home.ui.products.ProductDetails.ProductDetailActivity
 import com.example.lojaadminmobile.databinding.FragmentProductsBinding
 
 class ProductsFragment() : Fragment() {

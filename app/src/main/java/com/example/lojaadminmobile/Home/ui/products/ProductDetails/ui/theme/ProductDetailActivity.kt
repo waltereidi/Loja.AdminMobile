@@ -1,4 +1,4 @@
-package com.example.lojaadminmobile.Home.ui.products.ProductDetails.ui.theme
+package com.example.lojaadminmobile.Home.ui.products.ProductDetails
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

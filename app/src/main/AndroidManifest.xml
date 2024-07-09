@@ -18,7 +18,7 @@
 <!--Requests -->
 
         <activity
-            android:name=".Home.ui.requests.RequestDetails.ui.theme.RequestDetailActivity"
+            android:name="com.example.lojaadminmobile.Home.ui.requests.RequestDetailActivity"
             android:exported="false" />
         <activity
             android:name=".Home.ui.requests.viewHolder.RequestViewHolder"
@@ -30,7 +30,7 @@
 
 <!--Products -->
         <activity
-            android:name=".Home.ui.products.ProductDetails.ui.theme.ProductDetailActivity"
+            android:name=".Home.ui.products.ProductDetails.ProductDetailActivity"
             android:exported="false" />
         <activity
             android:name=".Home.ui.products.viewHolder.ProductViewHolder"
