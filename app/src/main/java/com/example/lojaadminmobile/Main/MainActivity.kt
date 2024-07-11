@@ -7,6 +7,7 @@ import android.widget.EditText
 import androidx.activity.ComponentActivity
 import com.example.lojaadminmobile.Home.HomeActivity
 import com.example.lojaadminmobile.R
+import com.google.android.material.progressindicator.CircularProgressIndicator
 
 class MainActivity : ComponentActivity() {
     private val email: EditText get() = findViewById(R.id.emailEdit)
@@ -19,6 +20,7 @@ class MainActivity : ComponentActivity() {
         viewModel.VerifyStoredLogin(){
             if(it){
                 val intent = Intent(this , HomeActivity::class.java )
+
                 startActivity(intent)
             }
 
@@ -26,6 +28,8 @@ class MainActivity : ComponentActivity() {
 
     }
     fun submitLogin(view: View) {
+        findViewById<CircularProgressIndicator>(R.id.mainActivityprogressBar).visibility = View.VISIBLE
+
         val intent = Intent(this , HomeActivity::class.java )
         startActivity(intent)
 //        viewModel.SubmitLogin(email.text.toString() , password.text.toString()){

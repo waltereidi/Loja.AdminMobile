@@ -19,10 +19,13 @@ class ProductDetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val sku:String?=intent.getStringExtra("sku")
         val ean:String?=intent.getStringExtra("ean")
+        if(sku.isNullOrBlank() && ean.isNullOrBlank())
+        {
+            finish()
+        }
     }
-
-
 
 }
