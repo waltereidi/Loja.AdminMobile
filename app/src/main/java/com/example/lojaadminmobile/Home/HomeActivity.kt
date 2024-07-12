@@ -28,8 +28,11 @@ open class HomeActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_home)
         val appBarConfiguration = AppBarConfiguration( setOf( R.id.navigation_products,R.id.navigation_dashboard, R.id.navigation_requests ) )
+
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
     override  fun onResume(){
         super.onResume()
