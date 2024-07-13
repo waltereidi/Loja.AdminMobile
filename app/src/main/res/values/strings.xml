@@ -1,4 +1,7 @@
 <resources>
+    <!--Globals-->
+    <string name="currencySymbol">R$</string>
+    <!-- Main Activity -->
     <string name="app_name">Loja.AdminMobile</string>
     <string name="title_activity_spash_screen">SpashScreen</string>
     <string name="title_activity_login">LoginActivity</string>
@@ -30,5 +33,6 @@
     <string name="title_productDetail">Product Detail</string>
     <string name="home_search_title">search</string>
 
-
+<!--Request Products-->
+    <string name="requestProducts_finishRequestButton">Finish request</string>
 </resources>
