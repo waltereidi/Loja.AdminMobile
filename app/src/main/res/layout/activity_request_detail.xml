@@ -11,11 +11,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
         <TextView
-            android:id="@+id/requestProducts_requestItensCount"
+            android:id="@+id/requestDetail_requestItensCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -25,7 +25,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/requestDetail_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="18dp"
+            android:layout_marginVertical="16dp"
             android:background="@android:color/darker_gray"/>
 
     <LinearLayout
@@ -48,13 +48,13 @@
             android:gravity="start|bottom"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/requestProducts_total"
-
+                android:text="@string/requestDetail_TOTAL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 tools:text="TOTAL" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 android:textStyle="bold"
                 tools:text="$" />
             <TextView
-                android:id="@+id/requestProducts_totalValue"
+                android:id="@+id/requestDetail_totalValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -79,14 +79,99 @@
         </LinearLayout>
 
 
+
     </LinearLayout>
-        <com.google.android.material.button.MaterialButton
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@+id/requestProducts_finishRequestButton"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/requestDetail_clientName"
+                tools:text="Client Name:" />
+            <TextView
+                android:id="@+id/requestDetail_clientNameValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="100" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/requestDetail_clientEmail"
+                tools:text="Email :" />
+            <TextView
+                android:id="@+id/requestDetail_clientEmailValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="walter.eidi@hotmail.com" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/requestDetail_clientAddress"
+                tools:text="Address :" />
+            <TextView
+                android:id="@+id/requestProducts_clientAddressValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Rua joão de oliveira n°25" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/requestDetail_clientRequestId"
+                tools:text="Request Id:" />
+            <TextView
+                android:id="@+id/requestDetail_clientRequestIdValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="1003" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/requestDetail_finishRequestButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/requestDetail_finishRequestButton"
             android:textSize="16sp"
             app:icon="@drawable/baseline_receipt_24"
             tools:text="FINISH REQUEST" />
+    </LinearLayout>
+
     </LinearLayout>
 
 

@@ -7,6 +7,8 @@ data class RequestsProductsRepository(
     @SerializedName("imageUrl") val productImageUrl:String,
     @SerializedName("sku") val sku:String ,
     @SerializedName("ean") val ean:String ,
+    @SerializedName("price") val price:Double ,
+    @SerializedName("quantity") val quantity:Int
 
 )
 

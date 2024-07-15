@@ -34,5 +34,10 @@
     <string name="home_search_title">search</string>
 
 <!--Request Products-->
-    <string name="requestProducts_finishRequestButton">Finish request</string>
+    <string name="requestDetail_finishRequestButton">Finish request</string>
+    <string name="requestDetail_TOTAL">TOTAL</string>
+    <string name="requestDetail_clientName">Client Name:</string>
+    <string name="requestDetail_clientEmail">Email:</string>
+    <string name="requestDetail_clientAddress">Address:</string>
+    <string name="requestDetail_clientRequestId">Request Id:</string>
 </resources>
