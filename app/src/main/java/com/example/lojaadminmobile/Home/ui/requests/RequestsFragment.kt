@@ -46,6 +46,7 @@ class RequestsFragment : Fragment() {
     }
     private fun openRequestDetail( request: RequestsRepository) {
         val intent = Intent(context , RequestDetailActivity::class.java )
+        intent.putExtra("id" ,request.id )
         startActivity(intent)
     }
 }

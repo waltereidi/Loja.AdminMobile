@@ -11,7 +11,6 @@ import com.example.lojaadminmobile.R
 private const val VIEW_TYPE_PRODUCT = 0
 class ListRequestsProductsAdapter(
     private val layoutInflater: LayoutInflater,
-    private val onClickListener:OnClickListener,
     private val context: Context
 ) : RecyclerView.Adapter<ListRequestsProductsViewHolder>(){
     private val listData = mutableListOf<ListRequestProductsRepository>()
@@ -20,20 +19,12 @@ class ListRequestsProductsAdapter(
         listData.addAll(newListData)
         notifyDataSetChanged()
     }
-    fun removeItem(position: Int) {
-        listData.removeAt(position)
-        notifyItemRemoved(position)
-    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = when (viewType) {
         VIEW_TYPE_PRODUCT ->{
-            val view= layoutInflater.inflate(R.layout.activity_product_view_holder , parent , false)
+            val view= layoutInflater.inflate(R.layout.activity_requestproducts_view_holder , parent , false)
             RequestProductsViewHolder(
                 view ,
-                object: RequestProductsViewHolder.OnClickListener{
-                    override fun onClick(request: RequestsProductsRepository) {
-                        onClickListener.onItemClick(request)
-                    }
-                },
                 context
 
             )
@@ -45,7 +36,4 @@ class ListRequestsProductsAdapter(
         holder.bindData(listData[position])
     }
 
-    interface OnClickListener {
-        fun onItemClick( product: RequestsProductsRepository)
-    }
 }

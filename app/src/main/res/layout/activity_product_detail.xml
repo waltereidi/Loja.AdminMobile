@@ -8,6 +8,11 @@
     android:layout_margin="32dp"
     android:title="@string/title_productDetail"
     tools:context=".Home.ui.products.ProductDetails.ProductDetailActivity">
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        tools:ignore="MissingConstraints" />
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="match_parent"
