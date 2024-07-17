@@ -1,7 +1,6 @@
 package com.example.lojaadminmobile.Home.ui.requests.requestDetails
 
 import androidx.lifecycle.ViewModel
-import com.example.lojaadminmobile.Home.ui.requests.RequestDetails.ui.theme.RequestDetailRepository
 
 class RequestDetailViewModel : ViewModel() {
     fun getListData(listRequestProductsAdaper: ListRequestsProductsAdapter) {
@@ -51,6 +50,7 @@ class RequestDetailViewModel : ViewModel() {
             "Product",
             "",
             1,
+            "email@testCase.com"
         )
 
     }
