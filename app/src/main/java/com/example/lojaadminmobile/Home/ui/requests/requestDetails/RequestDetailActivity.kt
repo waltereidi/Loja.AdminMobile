@@ -49,6 +49,4 @@ class RequestDetailActivity : AppCompatActivity() {
     }
 
 
-
-
 }

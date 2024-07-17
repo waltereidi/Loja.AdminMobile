@@ -4,12 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.ProgressBar
 import androidx.activity.ComponentActivity
 import com.example.lojaadminmobile.Home.HomeActivity
 import com.example.lojaadminmobile.R
-import com.google.android.material.progressindicator.CircularProgressIndicator
 
 class MainActivity : ComponentActivity() {
+    private val progressBar: ProgressBar get() = findViewById<ProgressBar>(R.id.main_progressBar)
     private val email: EditText get() = findViewById(R.id.emailEdit)
     private val password: EditText get() = findViewById(R.id.passwordEdit)
     private val viewModel:MainViewModel get() = MainViewModel(this);
@@ -28,9 +29,18 @@ class MainActivity : ComponentActivity() {
 
     }
     fun submitLogin(view: View) {
-        findViewById<CircularProgressIndicator>(R.id.mainActivityprogressBar).visibility = View.VISIBLE
-
+        progressBar.progress = 10;
+        progressBar.progress = 20;
+        progressBar.progress = 30;
+        progressBar.progress = 40;
+        progressBar.progress = 50;
+        progressBar.progress = 60;
+        progressBar.progress = 70;
+        progressBar.progress = 80;
+        progressBar.progress = 90;
+        progressBar.progress = 100;
         val intent = Intent(this , HomeActivity::class.java )
+
         startActivity(intent)
 //        viewModel.SubmitLogin(email.text.toString() , password.text.toString()){
 //            if(it)
