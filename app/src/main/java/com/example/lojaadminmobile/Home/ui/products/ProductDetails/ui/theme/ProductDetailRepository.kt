@@ -13,4 +13,5 @@ data class ProductDetailRepository(
     @SerializedName("created_at") val updatedAt: Date,
     @SerializedName("updated_at") val createdAt: Date,
     @SerializedName("id") val id:Int,
+    @SerializedName("price") val price:Double,
  )

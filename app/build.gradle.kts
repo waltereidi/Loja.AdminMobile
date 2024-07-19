@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.androidx.activity)
     // Skip this if you don't want to use integration libraries or configure Glide.
     annotationProcessor("com.github.bumptech.glide:compiler:4.14.2")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
