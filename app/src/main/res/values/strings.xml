@@ -40,4 +40,8 @@
     <string name="requestDetail_clientEmail">Email:</string>
     <string name="requestDetail_clientAddress">Address:</string>
     <string name="requestDetail_clientRequestId">Request Id:</string>
+<!--    -->
+    <string name="dashboard_monthRuequestTitle">Month Requests:</string>
+    <string name="dashboard_monthRevenueTitle">Month Revenue:</string>
+
 </resources>

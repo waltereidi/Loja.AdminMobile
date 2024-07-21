@@ -14,20 +14,28 @@ class DashboardFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModelViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
-
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val barChart = binding.barChartHorizontal
-
+        val barChart = binding.dashboardMonthRequest
+        initCharts()
         return root
+    }
+    private fun initCharts() {
+        val viewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val data:DashBoardRepository.DashboardRequest = viewModel.getData()
+
+        val monthRevenuedashBoard = binding.dashboardMonthRevenue
+        val monthRequestsDashBoard = binding.dashboardMonthRequest
+        monthRevenuedashBoard.animate(data.listDashboard_monthRevenue.map{it.title to it.value})
+        monthRequestsDashBoard.animate(data.listDashboard_monthRequests.map{it.title to it.value})
+
+        monthRequestsDashBoard.animation.duration = 2000
+        monthRevenuedashBoard.animation.duration = 2000
     }
      override fun onDestroyView() {
         super.onDestroyView()
